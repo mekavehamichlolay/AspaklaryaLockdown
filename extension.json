@@ -40,7 +40,7 @@
 			"aspaklarya-lockdown-list": true,
 			"aspaklarya-lock-revisions": true
 		},
-		"spiritualCommittee": {
+		"spiritual-committee": {
 			"aspaklarya-read-locked": true,
 			"aspaklarya-read-semi-locked": true,
 			"aspaklarya-edit-locked": true,
