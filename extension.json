@@ -19,7 +19,7 @@
 		"MediaWiki\\Extension\\AspaklaryaLockDown\\": "includes/"
 	},
 	"GroupPermissions": {
-		"aspaklaryaEditor": {
+		"aspaklarya-editor": {
 			"aspaklarya-read-locked": true,
 			"aspaklarya-read-semi-locked": true,
 			"aspaklarya-edit-locked": true,
