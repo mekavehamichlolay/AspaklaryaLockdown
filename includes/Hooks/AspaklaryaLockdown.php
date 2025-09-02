@@ -238,7 +238,7 @@ class AspaklaryaLockdown implements
 			$out->addModules('ext.aspaklaryalockdown.blockingFilteredPages');
 		}
 		if ( $level !== '' ) {
-			$out->setRobotPolicy( [ 'noindex', 'nofollow' ] );
+			$out->setRobotPolicy( 'noindex,nofollow' );
 		}
 	}
 
