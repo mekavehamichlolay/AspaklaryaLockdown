@@ -388,7 +388,7 @@ class ALRevLockRevisionList extends RevDelList {
 	private function updateLog( $logType, $params ) {
 		// Add params for affected page and ids
 		$logParams = [
-			'4::description' => wfMessage( "lock-$logType" ),
+			'4::description' => wfMessage( "lock-$logType" )->inContentLanguage()->text(),
 			'5::ids' => $params['ids'],
 		];
 		// Actually add the deletion log entry

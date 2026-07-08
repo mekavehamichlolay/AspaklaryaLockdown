@@ -183,13 +183,13 @@ class Main {
 		if ( $logAction === "modify" ) {
 
 			$params = [
-				"4::description" => wfMessage( 'lock-' . self::getLevelFromBit( $current ) ),
-				"5::description" => wfMessage( "$logAction-$limit" ),
+				"4::description" => wfMessage( 'lock-' . self::getLevelFromBit( $current ) )->inContentLanguage()->text(),
+				"5::description" => wfMessage( "$logAction-$limit" )->inContentLanguage()->text(),
 				"detailes" => $logParamsDetails,
 			];
 		} else {
 			$params = [
-				"4::description" => wfMessage( "$logAction-$limit" ),
+				"4::description" => wfMessage( "$logAction-$limit" )->inContentLanguage()->text(),
 				"detailes" => $logParamsDetails,
 			];
 		}
