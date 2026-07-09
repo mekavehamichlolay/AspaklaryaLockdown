@@ -126,22 +126,28 @@
 	},
 	"LogParamsAllowedClasses": {
 		"aspaklarya": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		],
 		"aspaklarya/hide": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		],
 		"aspaklarya/unhide": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		],
 		"aspaklarya/lock": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		],
 		"aspaklarya/unlock": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		],
 		"aspaklarya/modify": [
-			"MediaWiki\\Message\\Message"
+			"MediaWiki\\Message\\Message",
+			"Message"
 		]
 	},
 	"LogRestrictions": {
