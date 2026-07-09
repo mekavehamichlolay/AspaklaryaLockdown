@@ -127,6 +127,21 @@
 	"LogParamsAllowedClasses": {
 		"aspaklarya": [
 			"MediaWiki\\Message\\Message"
+		],
+		"aspaklarya/hide": [
+			"MediaWiki\\Message\\Message"
+		],
+		"aspaklarya/unhide": [
+			"MediaWiki\\Message\\Message"
+		],
+		"aspaklarya/lock": [
+			"MediaWiki\\Message\\Message"
+		],
+		"aspaklarya/unlock": [
+			"MediaWiki\\Message\\Message"
+		],
+		"aspaklarya/modify": [
+			"MediaWiki\\Message\\Message"
 		]
 	},
 	"LogRestrictions": {
