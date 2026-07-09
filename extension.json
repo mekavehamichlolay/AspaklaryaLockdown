@@ -125,7 +125,7 @@
 		"aspaklarya/*": "LogFormatter"
 	},
 	"LogParamsAllowedClasses":{
-		"aspaklarya": "MediaWiki\\Message\\Message"
+		"aspaklarya/*": "MediaWiki\\Message\\Message"
 	},
 	"LogRestrictions": {
 		"aspaklarya": "aspaklarya-lockdown-logs"
