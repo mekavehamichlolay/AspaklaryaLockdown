@@ -124,8 +124,10 @@
 		"aspaklarya/unhide": "MediaWiki\\Extension\\AspaklaryaLockDown\\ALLogFormatter",
 		"aspaklarya/*": "LogFormatter"
 	},
-	"LogParamsAllowedClasses":{
-		"aspaklarya/*": "MediaWiki\\Message\\Message"
+	"LogParamsAllowedClasses": {
+		"aspaklarya": [
+			"MediaWiki\\Message\\Message"
+		]
 	},
 	"LogRestrictions": {
 		"aspaklarya": "aspaklarya-lockdown-logs"
