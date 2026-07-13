@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\AspaklaryaLockDown;
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class ALDBData {
 
@@ -18,7 +19,7 @@ class ALDBData {
 
 	/**
 	 * get database connection
-	 * @param DB_REPLICA|DB_PRIMARY $i
+	 * @param \DB_REPLICA|\DB_PRIMARY $i
 	 */
 	private static function getDB( $i ) {
 		$provider = MediaWikiServices::getInstance()->getDBLoadBalancer();
@@ -56,7 +57,7 @@ class ALDBData {
 	/**
 	 * get all locked revisions for this page
 	 * @param int $pageId
-	 * @return false|array
+	 * @return false|IResultWrapper
 	 */
 	public static function getLockedRevisions( int $pageId ) {
 		$db = self::getDB( DB_REPLICA );
@@ -65,8 +66,8 @@ class ALDBData {
 			->from( self::PAGES_REVISION_NAME )
 			->where( [ "alr_page_id" => $pageId ] )
 			->caller( __METHOD__ )
-			->fetchFieldValues();
-		if ( empty( $res ) ) {
+			->fetchResultSet();
+		if ( $res->numRows() === 0 ) {
 			return false;
 		}
 		return $res;
