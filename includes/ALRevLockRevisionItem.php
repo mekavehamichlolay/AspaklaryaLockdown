@@ -26,7 +26,7 @@ use MediaWiki\ChangeTags\ChangeTags;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use RevDelItem;
+use MediaWiki\RevisionDelete\RevDelItem;
 use MediaWiki\RevisionList\RevisionListBase;
 use MediaWiki\Xml\Xml;
 

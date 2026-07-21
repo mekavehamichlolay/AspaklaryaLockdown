@@ -36,7 +36,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Exception\PermissionsError;
-use RevDelList;
+use MediaWiki\RevisionDelete\RevDelList;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Xml\Xml;
 
@@ -89,7 +89,7 @@ class ALSpecialRevisionLock extends UnlistedSpecialPage {
 		return true;
 	}
 
-	public function getRestriction() {
+	public function getRestriction():string {
 		return 'aspaklarya-lock-revisions';
 	}
 

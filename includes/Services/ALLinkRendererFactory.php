@@ -9,6 +9,10 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkRendererFactory;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\TitleFormatter;
+use MediaWiki\User\TempUser\TempUserConfig;
+use MediaWiki\User\TempUser\TempUserDetailsLookup;
+use MediaWiki\User\UserIdentityLookup;
+use MediaWiki\User\UserNameUtils;
 
 class ALLinkRendererFactory extends LinkRendererFactory {
 
@@ -32,20 +36,30 @@ class ALLinkRendererFactory extends LinkRendererFactory {
 	 */
 	private $specialPageFactory;
 
-	/**
-	 * @inheritDoc
-	 */
+	private TempUserConfig $tempUserConfig;
+	private TempUserDetailsLookup $tempUserDetailsLookup;
+	private UserIdentityLookup $userIdentityLookup;
+	private UserNameUtils $userNameUtils;
+
 	public function __construct(
 		TitleFormatter $titleFormatter,
 		LinkCache $linkCache,
 		SpecialPageFactory $specialPageFactory,
-		HookContainer $hookContainer
+		HookContainer $hookContainer,
+		TempUserConfig $tempUserConfig,
+		TempUserDetailsLookup $tempUserDetailsLookup,
+		UserIdentityLookup $userIdentityLookup,
+		UserNameUtils $userNameUtils
 	) {
 		$this->titleFormatter = $titleFormatter;
 		$this->linkCache = $linkCache;
 		$this->specialPageFactory = $specialPageFactory;
 		$this->hookContainer = $hookContainer;
-		parent::__construct( $titleFormatter, $linkCache, $specialPageFactory, $hookContainer );
+		$this->tempUserConfig = $tempUserConfig;
+		$this->tempUserDetailsLookup = $tempUserDetailsLookup;
+		$this->userIdentityLookup = $userIdentityLookup;
+		$this->userNameUtils = $userNameUtils;
+		parent::__construct( $titleFormatter, $linkCache, $specialPageFactory, $hookContainer, $tempUserConfig, $tempUserDetailsLookup, $userIdentityLookup, $userNameUtils );
 	}
 
 	/**
@@ -54,7 +68,9 @@ class ALLinkRendererFactory extends LinkRendererFactory {
 	public function create( array $options = [ 'renderForComment' => false ] ) {
 		return new ALLinkRenderer(
 			$this->titleFormatter, $this->linkCache, $this->specialPageFactory,
-			$this->hookContainer,
+			$this->hookContainer, $this->tempUserConfig,
+			$this->tempUserDetailsLookup, $this->userIdentityLookup,
+			$this->userNameUtils,
 			new ServiceOptions( LinkRenderer::CONSTRUCTOR_OPTIONS, $options )
 		);
 	}

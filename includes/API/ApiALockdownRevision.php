@@ -8,7 +8,7 @@ use MediaWiki\Extension\AspaklaryaLockDown\ALRevLockRevisionList;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Title\Title;
-use RevDelList;
+use MediaWiki\RevisionDelete\RevDelList;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

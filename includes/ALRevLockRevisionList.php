@@ -33,7 +33,7 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\RevisionStore;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use RevDelList;
+use MediaWiki\RevisionDelete\RevDelList;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -76,7 +76,6 @@ class ALRevLockRevisionList extends RevDelList {
 	 * @param PageIdentity $page
 	 * @param array $ids
 	 * @param LBFactory $lbFactory
-	 * @param HookContainer $hookContainer
 	 * @param HtmlCacheUpdater $htmlCacheUpdater
 	 * @param RevisionStore $revisionStore
 	 */
