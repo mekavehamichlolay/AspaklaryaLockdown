@@ -53,7 +53,7 @@ class ALRevLockRevisionList extends RevDelList {
 	/** @var LBFactory */
 	private $lbFactory;
 
-	/** @var HtmlCacheUpdater */
+	/** @var HTMLCacheUpdater */
 	private $htmlCacheUpdater;
 
 	/** @var RevisionStore */
@@ -76,7 +76,7 @@ class ALRevLockRevisionList extends RevDelList {
 	 * @param PageIdentity $page
 	 * @param array $ids
 	 * @param LBFactory $lbFactory
-	 * @param HtmlCacheUpdater $htmlCacheUpdater
+	 * @param HTMLCacheUpdater $htmlCacheUpdater
 	 * @param RevisionStore $revisionStore
 	 */
 	public function __construct(
@@ -84,7 +84,7 @@ class ALRevLockRevisionList extends RevDelList {
 		PageIdentity $page,
 		array $ids,
 		LBFactory $lbFactory,
-		HtmlCacheUpdater $htmlCacheUpdater,
+		HTMLCacheUpdater $htmlCacheUpdater,
 		RevisionStore $revisionStore
 	) {
 		parent::__construct( $context, $page, array_map( 'intval', $ids ), $lbFactory );
@@ -469,7 +469,7 @@ class ALRevLockRevisionList extends RevDelList {
 	public function doPostCommitUpdates( array $visibilityChangeMap ) {
 		$this->htmlCacheUpdater->purgeTitleUrls(
 			$this->page,
-			HtmlCacheUpdater::PURGE_INTENT_TXROUND_REFLECTED
+			HTMLCacheUpdater::PURGE_INTENT_TXROUND_REFLECTED
 		);
 
 		return Status::newGood();

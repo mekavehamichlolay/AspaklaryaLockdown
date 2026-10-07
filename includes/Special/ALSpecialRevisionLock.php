@@ -233,7 +233,7 @@ class ALSpecialRevisionLock extends UnlistedSpecialPage {
 					'class' => ALRevLockRevisionList::class,
 					'services' => [
 						'DBLoadBalancerFactory',
-						'HtmlCacheUpdater',
+						'HTMLCacheUpdater',
 						'RevisionStore',
 					]
 				],

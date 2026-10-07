@@ -118,7 +118,7 @@ class ApiALockdownRevision extends ApiBase {
 					'class' => ALRevLockRevisionList::class,
 					'services' => [
 						'DBLoadBalancerFactory',
-						'HtmlCacheUpdater',
+						'HTMLCacheUpdater',
 						'RevisionStore',
 					]
 				],
