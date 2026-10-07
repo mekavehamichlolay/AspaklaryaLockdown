@@ -47,6 +47,8 @@ use MediaWiki\Xml\Xml;
  * @ingroup SpecialPage
  */
 class ALSpecialRevisionLock extends UnlistedSpecialPage {
+
+	public const RESTRICTION = 'aspaklarya-lock-revisions';
 	/** @var bool Was the DB modified in this request */
 	protected $wasSaved = false;
 
@@ -80,7 +82,7 @@ class ALSpecialRevisionLock extends UnlistedSpecialPage {
 	 * @param PermissionManager $permissionManager
 	 */
 	public function __construct( PermissionManager $permissionManager ) {
-		parent::__construct( 'Revisionlock', 'aspaklarya-lock-revisions' );
+		parent::__construct( 'Revisionlock' );
 
 		$this->permissionManager = $permissionManager;
 	}
@@ -90,7 +92,7 @@ class ALSpecialRevisionLock extends UnlistedSpecialPage {
 	}
 
 	public function getRestriction():string {
-		return 'aspaklarya-lock-revisions';
+		return self::RESTRICTION;
 	}
 
 	public function execute( $par ) {
@@ -131,7 +133,7 @@ class ALSpecialRevisionLock extends UnlistedSpecialPage {
 			throw new ErrorPageError( 'aspaklarya-revlock-nooldid-title', 'aspaklarya-revlock-nooldid-text' );
 		}
 
-		$restriction = 'aspaklarya-lock-revisions';
+		$restriction = self::RESTRICTION;
 
 		if ( !$this->getAuthority()->isAllowed( $restriction ) ) {
 			throw new PermissionsError( $restriction );
