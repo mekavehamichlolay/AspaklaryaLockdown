@@ -8,7 +8,7 @@
 	"license-name": "GPL-3.0-or-later",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.45.0"
+		"MediaWiki": ">= 1.46.0"
 	},
 	"MessagesDirs": {
 		"AspaklaryaLockdown": [
@@ -157,8 +157,20 @@
 		"aspaklarya_lockdown": "MediaWiki\\Extension\\AspaklaryaLockDown\\ALockDownAction"
 	},
 	"APIModules": {
-		"aspaklaryalockdown": "MediaWiki\\Extension\\AspaklaryaLockDown\\API\\ApiALockdown",
-		"aspaklaryalockdownrevision": "MediaWiki\\Extension\\AspaklaryaLockDown\\API\\ApiALockdownRevision"
+		"aspaklaryalockdown": {
+			"class": "MediaWiki\\Extension\\AspaklaryaLockDown\\API\\ApiALockdown",
+			"services": [
+				"WatchlistManager",
+				"WatchedItemStore"
+			]
+		},
+			"aspaklaryalockdownrevision": {
+			"class": "MediaWiki\\Extension\\AspaklaryaLockDown\\API\\ApiALockdownRevision",
+			"services": [
+				"WatchlistManager",
+				"WatchedItemStore"
+			]
+		}
 	},
 	"ExtensionMessagesFiles": {
 		"AspaklaryaLockdownAlias": "AspaklaryaLockdown.alias.php"
